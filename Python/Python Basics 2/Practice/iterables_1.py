@@ -41,19 +41,20 @@ processed_summary = {
     "manual_review": 0,
     "rejected": 0,
 }
-
+#1
 for tx_id, payload_note, amount, is_flagged, authorized_roles in transactions:
-
+    #print(tx_id, payload_note, amount, is_flagged, authorized_roles in transactions)
     if is_flagged or not amount or not payload_note:
         print(f"[{tx_id}] REJECTED: Invalid payload or flagged")
         processed_summary["rejected"] += 1
-
+        
     elif amount >= 500.0 or ("admin" not in authorized_roles and "billing" not in authorized_roles):
         print(f"[{tx_id}] REVIEW: High value or unverified role")
         processed_summary["manual_review"] += 1
-
-    else:
-        print(f"[{tx_id}] APPROVED: Cleared for processing")
-        processed_summary["approved"] += 1
-
-print(processed_summary)
+        
+    
+        
+    
+            
+        
+    
