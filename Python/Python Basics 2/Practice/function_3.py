@@ -63,15 +63,15 @@ def atm_system(account_holder, correct_pin, balance):
     while attempt > 0:
         pin = input("Enter PIN: ")
         if pin == correct_pin:
-            print("Access Granted!")
-            print(f"Welcome, {account_holder}!")
             break
         attempt -= 1
         if attempt > 0:
             print(f"Invalid PIN. Attempts left: {attempt}")
-        else:
-            print("Account locked due to multipe failed attempts")
-            return "LOCKED"
+    else:
+        print("Account locked due to multipe failed attempts")
+        return "LOCKED"
+    print("Access Granted!")
+    print(f"Welcome, {account_holder}!")
     
     while True:
         command = input("Enter command: (deposit/ withdraw/ passcode/ exit)")
